@@ -5,6 +5,8 @@ import Orb from "./Components/Orb/Orb";
 import Navigation from "./Components/Navigation/Navigation";
 import { useMemo, useState } from "react";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import Income from "./Components/Income/Income";
+import Expenses from "./Components/Expenses/Expenses";
 
 function App() {
   const [active, setActive] = useState(1)
@@ -12,6 +14,14 @@ function App() {
   const displayData = () => {
     switch(active){
       case 1:
+        return <Dashboard />
+      case 2:
+        return <Dashboard />
+      case 3:
+        return <Income />
+      case 4:
+        return <Expenses />
+        default: 
         return <Dashboard />
     }
   }
@@ -22,11 +32,11 @@ function App() {
 
   return (
     <AppStyled bg={bg2} className="App">
-      <orbMemo />
+      {orbMemo}
       <MainLayout>
-        <Navigation active={active} setActive={(setActive)} />
+        <Navigation active={active} setActive={setActive} />
         <main>
-          {displayData}
+          {displayData()}
         </main>
 
       </MainLayout>
@@ -35,21 +45,21 @@ function App() {
 }
 
 const AppStyled = styled.div`
-height: 100vh;
-background-image: url(${props => props.bg2});
-position: relative;
-main{
-  flex: 1;
-  background: rgba(252, 246, 249, 0.78);
-  border: 3px solid #FFFFFF;
-  backdrop-filter: blur(4.5px);
-  border-radius: 32px;
-  overflow: auto;
-  overflow-x: hidden;
-  &::-webkit-scrollbar{
-    width: 0;
+  height: 100vh;
+  background-image: url(${props => props.bg2});
+  position: relative;
+  main{
+    flex: 1;
+    background: rgba(252, 246, 249, 0.78);
+    border: 3px solid #FFFFFF;
+    backdrop-filter: blur(4.5px);
+    border-radius: 32px;
+    overflow: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar{
+      width: 0;
+    }
   }
-}
 `
 
 
