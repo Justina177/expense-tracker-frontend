@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import avater from '../../img/avatar.png'
 import { menuItems } from '../../utils/menuItems';
 import { signout } from '../../utils/Icons';
-// import { menuItems } from '../utils/menuItems';
-// import { signout } from '../utils/Icons';
+
 
 
 function Navigation({active, setActive}) {
