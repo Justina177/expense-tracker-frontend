@@ -12,7 +12,7 @@ function Navigation({active, setActive}) {
     <NavStyled>
         <div className="user-con">
             <img src={avater} alt="" />
-            <div class="text">
+            <div className="text">
                 <h2>Tina</h2>
                 <p>Your Money</p>
             </div>
